@@ -1,0 +1,17 @@
+function spinWords1(string) {
+  const splitedStringArray = string.split(" ");
+
+  for (let i = 0; i < splitedStringArray.length; i++) {
+    if (splitedStringArray[i].length >= 5) {
+      splitedStringArray[i] = splitedStringArray[i].split("").reverse().join("");
+    }
+  }
+
+  return splitedStringArray.join(" ");
+}
+
+function spinWords2(string){
+  return string.split(" ").map(function (word) {
+    return (word.length > 4) ? word.split("").reverse().join("") : word;
+  }).join(" ");
+}
